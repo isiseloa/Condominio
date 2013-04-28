@@ -22,23 +22,23 @@ namespace Web
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("pt-BR");
 
             //Lê o arquivo de configuração do NHibernate. 
-            var config = new XmlConfigurationSource("d:\\config.xml");
+            ////var config = new XmlConfigurationSource("d:\\config.xml");
 
             //Inicializa o NHibernate
-            ActiveRecordStarter.Initialize(new Assembly[] { Assembly.GetAssembly(typeof(Usuario)) }, config, new Type[] { });
+            ////ActiveRecordStarter.Initialize(new Assembly[] { Assembly.GetAssembly(typeof(Usuario)) }, config, new Type[] { });
 
             //ActiveRecordStarter.DropSchema();
-            //ActiveRecordStarter.CreateSchema();// criar tabela
+            ////ActiveRecordStarter.CreateSchema();// criar tabela
 
-            //Usuario usuario = new Usuario();
-            //usuario.Nome = "administrador";
-            //usuario.NomeUsuario = "admin";
-            //usuario.Email = "admin@admin.com.br";
-            //usuario.TipoDoUsuario = Usuario.TipoUsuario.AdministradorCondominio;
-            //usuario.StatusDoUsuario = Usuario.Status.Ativo;
+            ////Usuario usuario = new Usuario();
+            ////usuario.Nome = "administrador";
+            ////usuario.NomeUsuario = "admin";
+            ////usuario.Email = "admin@admin.com.br";
+            ////usuario.TipoDoUsuario = Usuario.TipoUsuario.AdministradorCondominio;
+            ////usuario.StatusDoUsuario = Usuario.Status.Ativo;
 
-            //usuario.Senha = Criptografia.EncriptMD5("admin");
-            //usuario.CreateAndFlush();
+            ////usuario.Senha = Criptografia.EncriptMD5("admin");
+            ////usuario.CreateAndFlush();
         }
 
         protected void Session_Start(object sender, EventArgs e)

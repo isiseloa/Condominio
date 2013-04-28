@@ -4,7 +4,8 @@
     <add key="connection.driver_class" value="NHibernate.Driver.SqlClientDriver" />
     <add key="dialect" value="NHibernate.Dialect.MsSql2008Dialect" />
     <add key="connection.provider" value="NHibernate.Connection.DriverConnectionProvider" />
-    <add key="connection.connection_string" value="Data Source=isis-pc\SQLEXPRESS;Initial Catalog=condominio;Integrated Security=True" />
+    <add key="connection.connection_string" value="Server=f67d07be-7cd8-4d6d-8091-a1ae0130a3e9.sqlserver.sequelizer.com;Database=dbf67d07be7cd84d6d8091a1ae0130a3e9;User ID=apdybuyiycslqjnu;Password=5QDgtayyB86SJAFNg2MbwL4WixTriUZ2ggE5GtF8nRCdZoTFGftTREysUQ74ohpP;" />
     <add value="NHibernate.ByteCode.Castle.ProxyFactoryFactory, NHibernate.ByteCode.Castle" key="proxyfactory.factory_class" />
   </config>
 </activerecord>
+
