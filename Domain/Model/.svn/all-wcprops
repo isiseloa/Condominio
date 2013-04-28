@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/Vendas/!svn/ver/74/Domain/Model
+END
+CondicaoPagamento.cs
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/Vendas/!svn/ver/73/Domain/Model/CondicaoPagamento.cs
+END
+Produto.cs
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/Vendas/!svn/ver/74/Domain/Model/Produto.cs
+END
+Cliente.cs
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/Vendas/!svn/ver/73/Domain/Model/Cliente.cs
+END
+Moeda.cs
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/Vendas/!svn/ver/73/Domain/Model/Moeda.cs
+END
+Fornecedor.cs
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/Vendas/!svn/ver/73/Domain/Model/Fornecedor.cs
+END
+Vendedor.cs
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/Vendas/!svn/ver/73/Domain/Model/Vendedor.cs
+END
+Contato.cs
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/Vendas/!svn/ver/73/Domain/Model/Contato.cs
+END
+Cotacao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/Vendas/!svn/ver/66/Domain/Model/Cotacao.cs
+END

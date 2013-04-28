@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Framework.Entities;
+using Castle.ActiveRecord;
+using System.Collections;
+
+namespace Domain.Model
+{
+    [ActiveRecord("Moeda")]
+    public class Moeda : EntidadeBase<Moeda>
+    {
+        #region Property
+        [Property("Nome", Length = 100)]
+        public string Nome { get; set; }
+
+        [Property("Simbolo", Length = 3)]
+        public string Simbolo { get; set; }
+
+        [Property("Brl", Length = 10)]
+        public double Brl { get; set; }
+
+        [Property("Status")]
+        public bool Status { get; set; }
+        #endregion
+
+        public static IList Pesquisar(string p, int qtdRegistros)
+        {
+            var resultado = (from c in Moeda.Todos
+                             where c.Nome.Contains(p)
+                             select new
+                             {
+                                 Código = c.Id,
+                                 Nome = c.Nome,
+                                 Símbolo = c.Simbolo,
+                                 BRL = c.Brl
+                                 //Criado_por = c.CriadoPor.Nome,
+                                 //Data_de_criação = c.DataCriacao
+                                 //Alterado_por = c.AlteradoPor,
+                                 //Data_de_Alteração = c.DataAlteracao
+                             }).Take(qtdRegistros);
+
+            return resultado.ToList();
+        }
+    }
+}

@@ -1,0 +1,45 @@
+﻿body
+{
+	background-color: #96cffa;
+	background-image:url(../Images/condominios5.JPG);
+	/*background-image:url(../Images/fundoPredios.JPG);*/
+	/*background-image:url(../Images/desenhoFundo.JPG);*/
+	/*background-image:url(../Images/fundoLagoaLuminoza2.JPG);*/
+	/*background-image:url(../Images/singapore4.JPG);*/
+	background-size: 100%;
+	background-repeat:no-repeat;
+		
+}
+
+
+.label
+{
+	color:Black;
+	font-size:large;
+	font-family: 'Helvetica Neue', 'Cooper Black', 'Segoe UI';
+    font-weight: bold; 
+    color:Navy;
+	
+}
+
+.blocoLogin
+{
+    background-color:transparent;
+	width:830px;
+    height: 215px;
+}
+
+.mensagem
+{
+	color:Red;
+}
+
+.button
+{
+    background-image:url(../Images/azul.PNG);
+    font-size:medium;
+	font-family: 'Helvetica Neue', 'Cooper Black', 'Segoe UI';
+    font-weight: bold; 
+    color:navy;
+}
+

@@ -1,0 +1,114 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Framework.Entities;
+using Castle.ActiveRecord;
+using System.Collections;
+using Framework.Helper;
+
+namespace Domain.Model
+{
+    [ActiveRecord("Cotacao")]
+    public class Cotacao : EntidadeBase<Cliente>
+    {
+        #region Property
+
+        [Property("Descricao", Length = 2000)]
+        public String Descricao { get; set; }
+
+        [Property("Numero")]
+        public int Numero { get; set; }
+
+        [Property("Data")]
+        public DateTime Data { get; set; }
+
+        [Property("Conclusao")]
+        public DateTime Conclusao { get; set; }
+
+        [Property("Situacao")]
+        public int Situacao { get; set; }
+
+        [BelongsTo("FornecedorId", Cascade=CascadeEnum.None)]
+        public Fornecedor Fornecedor { get; set; }
+
+
+
+        [Property("Empresa", Length = 200)]
+        public string Empresa { get; set; }
+
+        [Property("Rg", Length = 20)]
+        public string Rg { get; set; }
+
+        [Property("Cpf", Length = 30)]
+        public string Cpf { get; set; }
+
+        [Property("Sexo")]
+        public int Sexo { get; set; }
+
+        [Property("Email", Length = 200)]
+        public string Email { get; set; }
+
+        [Property("HomePage", Length = 200)]
+        public string HomePage { get; set; }
+
+        [Property("TelefoneResidencial", Length = 20)]
+        public string TelefoneResidencial { get; set; }
+
+        [Property("TelefoneComercial", Length = 20)]
+        public string TelefoneComercial { get; set; }
+
+        [Property("Fax", Length = 20)]
+        public string Fax { get; set; }
+
+        [Property("Celular", Length = 20)]
+        public string Celular { get; set; }
+
+        [Property("Endereco", Length = 300)]
+        public string Endereco { get; set; }        
+
+        [Property("Bairro", Length = 20)]
+        public string Bairro { get; set; }
+
+        [Property("Cidade", Length = 30)]
+        public string Cidade { get; set; }
+
+        [Property("Cep", Length = 10)]
+        public string Cep { get; set; }
+
+        [Property("Estado")]
+        public int Estado { get; set; }
+
+        [Property("EnderecoSecundario", Length = 300)]
+        public string EnderecoSecundario { get; set; }
+
+        [Property("NumeroSecundario", Length = 10)]
+        public string NumeroSecundario { get; set; }
+
+        [Property("BairroSecundario", Length = 20)]
+        public string BairroSecundario { get; set; }
+
+        [Property("CidadeSecundario", Length = 30)]
+        public string CidadeSecundario { get; set; }
+
+        [Property("CepSecundario", Length = 10)]
+        public string CepSecundario { get; set; }
+
+        [Property("EstadoSecundario")]
+        public int EstadoSecundario { get; set; }
+
+        [Property("EnderecoCobranca")]
+        public int EnderecoCobranca { get; set; }
+
+        [Property("EnderecoCorreio")]
+        public int EnderecoCorreio { get; set; }
+
+        [Property("Observacao", Length = 2000)]
+        public string Observacao { get; set; }
+
+        [Property("Status")]
+        public bool Status { get; set; }
+
+        #endregion
+    }
+}

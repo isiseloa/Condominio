@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<activerecord>
+  <config>
+    <add key="connection.driver_class" value="NHibernate.Driver.SqlClientDriver" />
+    <add key="dialect" value="NHibernate.Dialect.MsSql2008Dialect" />
+    <add key="connection.provider" value="NHibernate.Connection.DriverConnectionProvider" />
+    <add key="connection.connection_string" value="Data Source=isis-pc\SQLEXPRESS;Initial Catalog=condominio;Integrated Security=True" />
+    <add value="NHibernate.ByteCode.Castle.ProxyFactoryFactory, NHibernate.ByteCode.Castle" key="proxyfactory.factory_class" />
+  </config>
+</activerecord>

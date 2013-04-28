@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Web.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <link href="../Styles/Master.css" rel="stylesheet" type="text/css" />
+        
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 41px;
+        }
+        .style2
+        {
+            width: 49px;
+        }
+        .style3
+        {
+            width: 73px;
+        }
+        .style4
+        {
+            width: 4454px;
+            height: 97px;
+        }
+        .style5
+        {
+            width: 604px;
+        }
+    </style>
+</head>
+<body>
+    <div class="Main">
+        <form id="form1" runat="server">
+        <table class="Header">
+            <tr>
+                <td class="HeaderImagem">
+
+                </td>
+                <td>
+                    <div class="HeaderTextoPrincipal">                     
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table class="Menu">
+            <tr>
+                <td class="style2">
+                    <asp:HyperLink ID="LinkDefault" NavigateUrl="~/Pages/Default.aspx" runat="server">Início</asp:HyperLink>
+                </td>
+                <td class="style3">
+                    
+                    <asp:HyperLink ID="LinkReservas" NavigateUrl="~/Pages/ConsultarReservas.aspx" runat="server">Reservas</asp:HyperLink>
+                </td>
+                <td>
+                    <asp:HyperLink ID="LinkOcorrencia" NavigateUrl="~/Pages/CadastrarOcorrencia.aspx"
+                        runat="server">Ocorrências</asp:HyperLink>
+                </td>
+                <td>
+                    <asp:HyperLink ID="LinkComunicados" NavigateUrl="~/Pages/ConsultarComunicados.aspx"
+                        runat="server">Comunicados</asp:HyperLink>
+                </td>
+                <td class="style1">
+                    <asp:HyperLink ID="LinkAta" NavigateUrl="~/Pages/ConsultarAta.aspx" runat="server">Atas</asp:HyperLink>
+                </td>
+                <td>
+                    <a href="CadastroMensagem.aspx">Mensagens </a>
+                </td>
+                <td>
+                    <a href="Boletos.aspx">Financeiro </a>
+                </td>
+                <td>
+                    <a href="AlterarSenha.aspx">Senha </a>
+                </td>
+                <td>
+                    <a href="ConsultarUsuarios.aspx">Usuários </a>
+                </td>
+                <td>
+                    <asp:HyperLink ID="LinkAdministracao" NavigateUrl="~/Pages/Administracao.aspx" runat="server">Administração</asp:HyperLink>
+                </td>
+                <td>
+                    <asp:HyperLink ID="LinkDespesas" NavigateUrl="~/Pages/ConsultarDespesa.aspx" runat="server">Despesas</asp:HyperLink>
+                </td>
+                <td>
+                    <asp:HyperLink ID="LinkFuncionarios" NavigateUrl="~/Pages/ConsultarFuncionario.aspx"
+                        runat="server">Funcionarios</asp:HyperLink>
+                </td>
+                <td style="border-right-color:White;">
+                    <asp:HyperLink ID="LinkUnidades" NavigateUrl="~/Pages/ConsultarUnidades.aspx" runat="server">Unidades</asp:HyperLink>
+                </td>
+            </tr>
+        </table>
+        <div class="BarraDivisoria">
+        </div>
+        <div class="ConteudoMaster">
+            <asp:ScriptManager ID="ScriptManager1" EnableScriptGlobalization="true" runat="server">
+            </asp:ScriptManager>
+            <asp:ContentPlaceHolder EnableViewState="true" ClientIDMode="Static" ID="ContentPlaceHolder1"
+                runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="Footer">
+               <table >
+                     <tr>
+                        <td rowspan=2 class="style4"> </td>
+                        <td class="style6">
+                              <asp:Button CssClass="button" ID="BtnSair" runat="server" Text="Sair"
+                             OnClick="Btnsair_Click" Height="34px" Width="89px" />
+                        </td>
+                    </tr>
+                </table>
+                            
+        </div>
+        </form>
+    </div>
+</body>
+</html>

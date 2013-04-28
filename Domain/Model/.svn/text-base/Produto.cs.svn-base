@@ -1,0 +1,122 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Framework.Entities;
+using Castle.ActiveRecord;
+using System.Collections;
+
+namespace Domain.Model
+{
+
+    [ActiveRecord("Produto")]
+    public class Produto : EntidadeBase<Produto>
+    {
+        #region Property
+
+        [Property("Nome", Length = 100)]
+        public string Nome { get; set; }
+
+        [Property("CodigoDeBarras", Length = 100)]
+        public string CodigoDeBarras { get; set; }
+
+        [Property("Descricao", Length = 100)]
+        public string Descricao { get; set; }
+
+        [Property("MarcaFabricante", Length = 100)]
+        public string MarcaFabricante { get; set; }
+
+        [Property("Dimensao")]
+        public decimal Dimensao { get; set; }
+
+        [Property("Peso")]
+        public decimal Peso { get; set; }
+
+        [Property("UnidadeVenda")]
+        public int UnidadeVenda { get; set; }
+
+        [Property("TipoEstoque")]
+        public int TipoEstoque { get; set; }
+
+        [Property("EstoqueMinimo")]
+        public int EstoqueMinimo { get; set; }
+
+        [Property("EstoqueCompra")]
+        public int EstoqueCompra { get; set; }
+
+        [Property("EstoqueAtual")]
+        public int EstoqueAtual { get; set; }
+
+        [Property("CustoProduto")]
+        public decimal CustoProduto { get; set; }
+
+        [Property("PrecoAtacadoVista", NotNull = true)]
+        public decimal PrecoAtacadoVista { get; set; }
+
+        [Property("PercentualLucroAtacadoVista", NotNull = true)]
+        public decimal PercentualLucroAtacadoVista { get; set; }
+
+        [Property("PrecoAtacadoPrazo", NotNull = true)]
+        public decimal PrecoAtacadoPrazo { get; set; }
+
+        [Property("PercentualLucroAtacadoPrazo", NotNull = true)]
+        public decimal PercentualLucroAtacadoPrazo { get; set; }
+
+        [Property("PrecoVarejoVista", NotNull = true)]
+        public decimal PrecoVarejoVista { get; set; }
+
+        [Property("PercentualLucroVarejoVista", NotNull = true)]
+        public decimal PercentualLucroVarejoVista { get; set; }
+
+        [Property("PrecoVarejoPrazo", NotNull = true)]
+        public decimal PrecoVarejoPrazo { get; set; }
+
+        [Property("PercentualLucroVarejoPrazo", NotNull = true)]
+        public decimal PercentualLucroVarejoPrazo { get; set; }
+
+        [Property("Observacao", Length = 2000)]
+        public string Observacao { get; set; }
+
+        [Property("Status")]
+        public bool Status { get; set; }
+
+        [BelongsTo("MoedaId", Cascade = CascadeEnum.None)]
+        public Moeda Moeda { get; set; }
+
+        [BelongsTo("FornecedorId", Cascade = CascadeEnum.None)]
+        public Fornecedor Fornecedor { get; set; }
+
+
+        #endregion        
+
+        public static IList Pesquisar(string p, int qtdRegistros)
+        {
+            var resultado = (from c in Produto.Todos
+                             where c.Nome.Contains(p)
+                             select new
+                             {
+                                 Código = c.Id,
+                                 Nome = c.Nome,
+                                 Código_de_Barras = c.CodigoDeBarras,
+                                 Descrição = c.Descricao,
+                                 Marca_Fabricante = c.MarcaFabricante,
+                                 Dimensão = c.Dimensao,
+                                 Peso = c.Peso,
+                                 Estoque_Mínimo = c.EstoqueMinimo,
+                                 Estoque_Compra = c.EstoqueCompra,
+                                 Estoque_Atual = c.EstoqueAtual,
+                                 Custo_do_Produto = c.CustoProduto,
+                                 Preço_Atacado_Vista = c.PrecoAtacadoVista,
+                                 Percet_Atacado_Vista = c.PercentualLucroAtacadoVista,
+                                 Preço_Atacado_Praço = c.PrecoAtacadoPrazo,
+                                 Percet_Atacado_Prazo = c.PercentualLucroAtacadoPrazo,
+                                 Preço_Varejo_Vista = c.PrecoVarejoVista,
+                                 Percet_Varejo_Vista = c.PercentualLucroVarejoVista,
+                                 Preço_Varejo_Praço = c.PrecoVarejoPrazo,
+                                 Percet_Varejo_Prazo = c.PercentualLucroVarejoPrazo,
+                             }).Take(qtdRegistros);
+
+            return resultado.ToList();
+        }
+    }
+}

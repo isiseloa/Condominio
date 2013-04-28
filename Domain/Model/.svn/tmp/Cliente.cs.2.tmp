@@ -1,0 +1,219 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Framework.Entities;
+using Castle.ActiveRecord;
+using System.Collections;
+using Framework.Helper;
+
+namespace Domain.Model
+{
+    [Serializable]
+    [ActiveRecord("Cliente")]
+    public class Cliente : EntidadeBase<Cliente>
+    {
+        #region Property
+
+        [Property("Tipo")]
+        public int Tipo { get; set; }
+
+        [Property("NomeFantasia", Length = 200)]
+        public string NomeFantasia { get; set; }
+
+        [Property("RazaoSocial", Length = 200)]
+        public string RazaoSocial { get; set; }
+
+        [Property("Cnpj", Length = 20)]
+        public string Cnpj { get; set; }
+
+        [Property("InscricaoEstadual", Length = 30)]
+        public string InscricaoEstadual { get; set; }
+
+        [Property("Nome", Length = 200)]
+        public string Nome { get; set; }
+
+        [Property("Empresa", Length = 200)]
+        public string Empresa { get; set; }
+
+        [Property("Rg", Length = 20)]
+        public string Rg { get; set; }
+
+        [Property("Cpf", Length = 30)]
+        public string Cpf { get; set; }
+
+        [Property("Sexo")]
+        public int Sexo { get; set; }
+
+        [Property("Email", Length = 200)]
+        public string Email { get; set; }
+
+        [Property("HomePage", Length = 200)]
+        public string HomePage { get; set; }
+
+        [Property("TelefoneResidencial", Length = 20)]
+        public string TelefoneResidencial { get; set; }
+
+        [Property("TelefoneComercial", Length = 20)]
+        public string TelefoneComercial { get; set; }
+
+        [Property("Fax", Length = 20)]
+        public string Fax { get; set; }
+
+        [Property("Celular", Length = 20)]
+        public string Celular { get; set; }
+
+        [Property("Endereco", Length = 300)]
+        public string Endereco { get; set; }
+
+        [Property("Numero", Length = 10)]
+        public string Numero { get; set; }
+
+        [Property("Bairro", Length = 20)]
+        public string Bairro { get; set; }
+
+        [Property("Cidade", Length = 30)]
+        public string Cidade { get; set; }
+
+        [Property("Cep", Length = 10)]
+        public string Cep { get; set; }
+
+        [Property("Estado")]
+        public int Estado { get; set; }
+
+        [Property("EnderecoSecundario", Length = 300)]
+        public string EnderecoSecundario { get; set; }
+
+        [Property("NumeroSecundario", Length = 10)]
+        public string NumeroSecundario { get; set; }
+
+        [Property("BairroSecundario", Length = 20)]
+        public string BairroSecundario { get; set; }
+
+        [Property("CidadeSecundario", Length = 30)]
+        public string CidadeSecundario { get; set; }
+
+        [Property("CepSecundario", Length = 10)]
+        public string CepSecundario { get; set; }
+
+        [Property("EstadoSecundario")]
+        public int EstadoSecundario { get; set; }
+
+        [Property("EnderecoCobranca")]
+        public int EnderecoCobranca { get; set; }
+
+        [Property("EnderecoCorreio")]
+        public int EnderecoCorreio { get; set; }
+
+        [Property("Observacao", Length = 2000)]
+        public string Observacao { get; set; }
+
+        [Property("Status")]
+        public bool Status { get; set; }
+
+        #endregion
+
+        public static List<Cliente> PesquisarPorId(int i)
+        {
+            var resultado = from u in Cliente.Todos
+                            where u.Id == i
+                            select u;
+
+            return resultado.ToList();
+        }
+
+        public static IList Pesquisar(string p, int qtdRegistros)
+        {
+            // int valor = 2;
+            //var x = ItemComboBox.Todos.First(i => i.ComboBox.Nome == TipoComboBox.TipoCliente.ToString() && i.Valor == valor).Nome;
+
+            var resultado = (from c in Cliente.Todos
+
+                             //join t in ItemComboBox.Todos on c.Tipo equals t.Valor //into c_join_t from t  in c_join_t.DefaultIfEmpty()
+                             //join e in ItemComboBox.Todos on c.Estado equals e.Valor //into e_join_c from e in e_join_c.DefaultIfEmpty()  
+                             //join s in ItemComboBox.Todos on c.Sexo equals s.Valor // into s_join_c from s in s_join_c.DefaultIfEmpty()
+                             //where e.ComboBox.Nome == TipoComboBox.Estado.ToString()
+                             //&& t.ComboBox.Nome == TipoComboBox.TipoCliente.ToString()
+                             //&& e.ComboBox.Nome == TipoComboBox.Estado.ToString()
+                             //&& s.ComboBox.Nome == TipoComboBox.Sexo.ToString()
+                             //&& 
+                             where c.Nome.Contains(p)
+<<<<<<< .mine
+                             select new
+                             {
+                                 Código = c.Id,
+                                 //Tipo_Pessoa = t.Nome,                                          
+                                 //Tipo_Pessoa = (c.Tipo == 0) ? string.Empty : ItemComboBox.Todos.First(i => i.ComboBox.Nome == TipoComboBox.TipoCliente.ToString() && i.Valor == c.Tipo).Nome,
+=======
+                             select new { Código = c.Id,
+                                          //Tipo_Pessoa = t.Nome,                                          
+                                          //Tipo_Pessoa = (c.Tipo == 0) ? string.Empty : ItemComboBox.Todos.First(i => i.ComboBox.Nome == TipoComboBox.TipoCliente.ToString() && i.Valor == c.Tipo).Nome,
+                                          
+                                         // ((TipoComboBox)c.Tipo).ToString(),
+                                          Nome = c.Nome,
+                                          RG = c.Rg,
+                                          CPF = c.Cpf,
+                                          //Sexo = s.Nome,
+                                          //Sexo = (c.Sexo == 0) ? string.Empty : ItemComboBox.Todos.First(i => i.ComboBox.Nome == TipoComboBox.Sexo.ToString()).Nome,
+                                          Nome_Fantasia =  c.NomeFantasia,                                          
+                                          CNPJ = c.Cnpj,
+                                          Inscrição_Estadual = c.InscricaoEstadual,
+                                          Email = c.Email,
+                                          Home_Page = c.HomePage,
+                                          Tel_Comercial = c.TelefoneComercial,
+                                          Tel_Residencial = c.TelefoneResidencial,
+                                          Fax = c.Fax,
+                                          Celular = c.Celular,
+                                          Endereço = c.Endereco,
+                                          Número = c.Numero,
+                                          Bairro = c.Bairro,
+                                          Cidade = c.Cidade,
+                                          //Estado = e.Nome,
+                                          //Estado = (c.Estado == 0) ? string.Empty : ItemComboBox.Todos.First(i => i.ComboBox.Nome == TipoComboBox.Estado.ToString()).Nome,
+                                          CEP = c.Cep
+                                          //Criado_por = c.CriadoPor.Nome,
+                                          //Data_de_criação = c.DataCriacao
+                                          //Alterado_por = c.AlteradoPor,
+                                          //Data_de_Alteração = c.DataAlteracao
+                             }).Take(qtdRegistros);
+>>>>>>> .r55
+
+                                 // ((TipoComboBox)c.Tipo).ToString(),
+                                 Nome = c.Nome,
+                                 RG = c.Rg,
+                                 CPF = c.Cpf,
+                                 //Sexo = s.Nome,
+                                 //Sexo = (c.Sexo == 0) ? string.Empty : ItemComboBox.Todos.First(i => i.ComboBox.Nome == TipoComboBox.Sexo.ToString()).Nome,
+                                 Nome_Fantasia = c.NomeFantasia,
+                                 CNPJ = c.Cnpj,
+                                 Inscrição_Estadual = c.InscricaoEstadual,
+                                 Email = c.Email,
+                                 Home_Page = c.HomePage,
+                                 Tel_Comercial = c.TelefoneComercial,
+                                 Tel_Residencial = c.TelefoneResidencial,
+                                 Fax = c.Fax,
+                                 Celular = c.Celular,
+                                 Endereço = c.Endereco,
+                                 Número = c.Numero,
+                                 Bairro = c.Bairro,
+                                 Cidade = c.Cidade,
+                                 //Estado = e.Nome,
+                                 //Estado = (c.Estado == 0) ? string.Empty : ItemComboBox.Todos.First(i => i.ComboBox.Nome == TipoComboBox.Estado.ToString()).Nome,
+                                 CEP = c.Cep
+                                 //Criado_por = c.CriadoPor.Nome,
+                                 //Data_de_criação = c.DataCriacao
+                                 //Alterado_por = c.AlteradoPor,
+                                 //Data_de_Alteração = c.DataAlteracao
+                             }).Take(50);
+
+            return resultado.ToList();
+        }
+
+        public static bool ClienteJaCadastrado(string p)
+        {
+            return Cliente.Todos.Count(u => u.Nome == p) > 0;
+        }
+
+
+    }
+}

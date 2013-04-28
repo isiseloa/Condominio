@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Domain.Util
+{
+    public class Inicializador
+    {
+
+        public static Type GetType(string classe)
+        {
+            return Type.GetType("Domain.Model." + classe); 
+        }
+
+    }
+}
