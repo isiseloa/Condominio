@@ -26,11 +26,7 @@
             width: 4454px;
             height: 97px;
         }
-        .style5
-        {
-            width: 604px;
-        }
-    </style>
+        </style>
 </head>
 <body>
     <div class="Main">
@@ -107,9 +103,7 @@
                      <tr>
                         <td rowspan=2 class="style4"> </td>
                         <td class="style6">
-                              <asp:Button CssClass="button" ID="BtnSair" runat="server" Text="Sair"
-                             OnClick="Btnsair_Click" Height="34px" Width="89px" />
-                        </td>
+                              &nbsp;</td>
                     </tr>
                 </table>
                             
